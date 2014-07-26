@@ -5,10 +5,10 @@ except ImportError:
 
 config = {
     'description': 'A minesweeper clone for the terminal',
-    'author': 'My Name',
-    'url': 'URL',
-    'download_url': 'Where to download it.',
-    'author_email': 'My email.',
+    'author': '4Evergreen4',
+    'url': 'https://github.com/4Evergreen4/nsweeper',
+    'download_url': 'https://github.com/4Evergreen4/nsweeper/archive/master.zip',
+    'author_email': 'email',
     'version': '0.1',
     'install_requires': [],
     'packages': ['nsweeper'],

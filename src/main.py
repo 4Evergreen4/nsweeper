@@ -3,7 +3,14 @@ import game
 
 def main():
     '''Start game'''
-
+    
+    # Sets the starting coordinates
+    win_x = 0
+    win_y = 0
+    # Sets the curses window size
+    win_w = 80
+    win_h = 24
+    
     # Starts ncurses
     stdscr = curses.initscr()
     
@@ -22,7 +29,7 @@ def main():
     stdscr.keypad(1)
     stdscr.nodelay(1)
     
-    game.game(stdscr)
+    game.game(stdscr, win_x, win_y, win_w, win_h)
     
     stop(stdscr)
 

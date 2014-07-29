@@ -11,7 +11,7 @@ config = {
     'author_email': 'email',
     'version': '0.1',
     'install_requires': [],
-    'packages': ['game'],
+    'packages': ['src'],
     'scripts': [],
     'name': 'nsweeper'
 }

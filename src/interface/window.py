@@ -22,5 +22,5 @@ class button(object):
         self.x = x
         self.y = y
 
-    def getstate():
+    def getstate(self):
         pass

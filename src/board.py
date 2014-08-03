@@ -16,10 +16,14 @@ class newboard(object):
     def getitem(self, x, y):
         return self.array[y][x]
 
-    def display(self, screen):
-        for h in range(0, len(self.array)):
-            screen.addstr(self.y + h, self.x, str(self.array[h]))
-        screen.refresh()
+    def setitem(self, x, y, item):
+        self.array[y][x] = item
 
-        #for height in self.array:
-        #    print height
+    def display(self, screen=0):
+        if screen != 0:
+            for h in range(0, len(self.array)):
+                screen.addstr(self.y + h, self.x, str(self.array[h]))
+            screen.refresh()
+        else:
+            for height in self.array:
+                print height

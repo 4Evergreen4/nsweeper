@@ -1,11 +1,10 @@
 import curses
 
 class newboard(object):
-    def __init__(self, w, h, x, y):
+    '''Creates a 2d array.'''
+    def __init__(self, w, h):
         self.w = w
         self.h = h
-        self.x = x
-        self.y = y
         self.array = []
 
         for height in range(0, self.h):
@@ -14,15 +13,18 @@ class newboard(object):
                 self.array[height].append('')
 
     def getitem(self, x, y):
+        '''Returns value from the 2d array'''
         return self.array[y][x]
 
     def setitem(self, x, y, item):
+        '''Sets an item in the 2d array.'''
         self.array[y][x] = item
 
-    def display(self, screen=0):
+    def display(self, x, y, screen=0):
+        '''Displays the 2d array.'''
         if screen != 0:
             for h in range(0, len(self.array)):
-                screen.addstr(self.y + h, self.x, str(self.array[h]))
+                screen.addstr(y + h, x, str(self.array[h]))
             screen.refresh()
         else:
             for height in self.array:

@@ -8,6 +8,9 @@ def main():
     # Config Stuff
     #
 
+    # Size of main window
+    main_h = 24
+    main_w = 80
     # Size of minefield
     field_h = 8
     field_w = 8
@@ -36,7 +39,7 @@ def main():
     stdscr.keypad(1)
     stdscr.nodelay(1)
 
-    game.game(stdscr, field_w, field_h, mine_num)
+    game.game(stdscr, main_w, main_h, field_w, field_h, mine_num)
 
     stop(stdscr)
 

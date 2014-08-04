@@ -4,12 +4,19 @@ import game
 def main():
     '''Start game'''
 
-    # Sets the starting coordinates
-    win_x = 0
-    win_y = 0
-    # Sets the curses window size
-    win_w = 80
-    win_h = 24
+    #
+    # Config Stuff
+    #
+
+    # Size of minefield
+    field_h = 8
+    field_w = 8
+    # Number of mines
+    mine_num = 10
+
+    #
+    # Game initialization
+    #
 
     # Starts ncurses
     stdscr = curses.initscr()
@@ -29,7 +36,7 @@ def main():
     stdscr.keypad(1)
     stdscr.nodelay(1)
 
-    game.game(stdscr, win_x, win_y, win_w, win_h)
+    game.game(stdscr, field_w, field_h, mine_num)
 
     stop(stdscr)
 

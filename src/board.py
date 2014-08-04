@@ -10,7 +10,7 @@ class newboard(object):
         for height in range(0, self.h):
             self.array.append([])
             for width in range(0, self.w):
-                self.array[height].append('')
+                self.array[height].append(0)
 
     def getitem(self, x, y):
         '''Returns value from the 2d array'''
@@ -19,6 +19,9 @@ class newboard(object):
     def setitem(self, x, y, item):
         '''Sets an item in the 2d array.'''
         self.array[y][x] = item
+
+    def getlist(self):
+        return self.array
 
     def display(self, x, y, screen=0):
         '''Displays the 2d array.'''

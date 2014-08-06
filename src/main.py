@@ -28,7 +28,8 @@ def main():
 
     if term_size[0] < main_h or term_size[1] < main_w:
         curses.endwin()
-        print "ERROR: Your console screen is smaller than 80x24."
+        print "ERROR: Your console screen is smaller than %sx%s." % (
+              main_w, main_h)
         print "Please resize your window and try again."
         return 1
 

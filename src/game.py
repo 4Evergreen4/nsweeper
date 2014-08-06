@@ -44,3 +44,4 @@ def game(screen, main_w, main_h, field_w, field_h, mine_num):
         edge.refresh()
         display_panel.top()
         display.refresh()
+        time.sleep(0.01)

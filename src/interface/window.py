@@ -32,8 +32,9 @@ class button(object):
         if self.state == True:
             top = "-" * (len(self.text) + 2)
             screen.addstr(y, x, top)
-            mid = "|" + self.text + "|"
-            screen.addstr(y + 1, x, mid, curses.A_STANDOUT)
+            screen.addstr(y + 1, x, "|")
+            screen.addstr(y + 1, x + 1, self.text, curses.A_STANDOUT)
+            screen.addstr(y + 1, x + (len(self.text) + 1), "|")
             screen.addstr(y + 2, x, top)
         else:
             top = "-" * (len(self.text) + 2)

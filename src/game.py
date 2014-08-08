@@ -15,9 +15,12 @@ def game(screen, main_w, main_h, field_w, field_h, mine_num):
     display_panel = curses.panel.new_panel(display)
     cursor_x = 0
     cursor_y = 0
+    cur_button = 0
     selector = cursor.newcursor(cursor_x, cursor_y, main_h, main_w)
-    quit = interface.window.button(5, 5, 'quit')
-    quit.setstate(True)
+    play = interface.window.button(40, 16, 'play')
+    play.setstate(True)
+    quit = interface.window.button(40, 10, 'quit')
+    quit.setstate(False)
 
     while True:
         key = screen.getch()
@@ -27,9 +30,8 @@ def game(screen, main_w, main_h, field_w, field_h, mine_num):
         edge.border()
         edge_panel.bottom()
         edge.refresh()
-        selector.update(key, display)
-        selector.display(display)
-        quit.display(display, 5, 5)
+        play.display(display, 20, 5)
+        quit.display(display, 20, 8)
         if quit.getstate() == True and key == 32:
             break
         display_panel.top()

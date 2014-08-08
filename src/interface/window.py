@@ -23,4 +23,21 @@ class button(object):
         self.y = y
 
     def getstate(self):
-        pass
+        return self.state
+
+    def setstate(self, state):
+        self.state = state
+
+    def display(self, screen, x, y):
+        if self.state == True:
+            top = "-" * (len(self.text) + 2)
+            screen.addstr(y, x, top)
+            mid = "|" + self.text + "|"
+            screen.addstr(y + 1, x, mid, curses.A_STANDOUT)
+            screen.addstr(y + 2, x, top)
+        else:
+            top = "-" * (len(self.text) + 2)
+            screen.addstr(y, x, top)
+            mid = "|" + self.text + "|"
+            screen.addstr(y + 1, x, mid)
+            screen.addstr(y + 2, x, top)

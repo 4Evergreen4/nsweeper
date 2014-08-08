@@ -26,10 +26,10 @@ def main():
 
     term_size = stdscr.getmaxyx()
 
-    if term_size[0] < main_h or term_size[1] < main_w:
+    if term_size[0] < main_h+2 or term_size[1] < main_w+2:
         curses.endwin()
         print "ERROR: Your console screen is smaller than %sx%s." % (
-              main_w, main_h)
+              main_w+2, main_h+2)
         print "Please resize your window and try again."
         return 1
 

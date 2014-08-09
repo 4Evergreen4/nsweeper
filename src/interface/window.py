@@ -18,12 +18,21 @@ def popup(x, y, w, h, title, text, screen):
 
     screen.refresh()
 
+def buttonhandler(first, key, *btns): # btns = buttons
+    cur_button = first
+
+
+
 class newbutton(object):
     def __init__(self, x, y, text, cyclenum):
         self.text = text
         buttons.append(text)
         self.x = x
         self.y = y
+        self.cyclenum = cyclenum
+
+    def getcyclenum(self):
+        return self.cyclenum
 
     def getstate(self):
         return self.state

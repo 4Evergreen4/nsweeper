@@ -1,5 +1,7 @@
 import curses
 
+buttons = []
+
 def popup(x, y, w, h, title, text, screen):
 
     topstr = str(title) + "-" * ((len(text) - len(title)) + 2)
@@ -16,9 +18,10 @@ def popup(x, y, w, h, title, text, screen):
 
     screen.refresh()
 
-class button(object):
-    def __init__(self, x, y, text):
+class newbutton(object):
+    def __init__(self, x, y, text, cyclenum):
         self.text = text
+        buttons.append(text)
         self.x = x
         self.y = y
 

@@ -18,9 +18,19 @@ def popup(x, y, w, h, title, text, screen):
 
     screen.refresh()
 
-def buttonhandler(first, key, *btns): # btns = buttons
-    cur_button = first
+class newbuttonhandler(object):
+    def __init__(self, first, *btns): # btns = buttons
+        self.cur_button = first
+        self.btns = btns
 
+    def update(self, key):
+        if key == curses.KEY_UP and self.cur_button > 0:
+            self.cur_button -= 1
+        if key == curses.KEY_DOWN and self.cur_button < len(self.btns) - 1:
+            self.cur_button += 1
+
+        self.btns[self.cur_button - 1].setstate(False)
+        self.btns[self.cur_button].setstate(True)
 
 
 class newbutton(object):
@@ -30,6 +40,7 @@ class newbutton(object):
         self.x = x
         self.y = y
         self.cyclenum = cyclenum
+        self.state = False
 
     def getcyclenum(self):
         return self.cyclenum

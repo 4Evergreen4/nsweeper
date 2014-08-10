@@ -6,7 +6,6 @@ import interface.window
 import board
 
 def game(screen, main_w, main_h, field_w, field_h, mine_num):
-    #popup(0,0,5,1, 'nsweeper', 'a popup testing zone', screen)
     minefield = board.newboard(field_h, field_w)
     minefield_list = minefield.getlist()
     edge = curses.newwin(main_h+2, main_w+2, 0, 0)

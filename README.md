@@ -7,7 +7,18 @@ A minesweeper clone for the terminal made with Python and curses.
 Nothing here yet.
 
 ## Usage
-Nothing here yet.
+### Menu:
+| Keys         | Actions                  |
+|--------------|---------------------------
+| Arrow keys   | Moves selector around.   |
+
+## Credits
+* nSnake: Classic snake game on the terminal; made with C++ and ncurses.
+  * homepage: http://nsnake.alexdantas.net/
+  * comments:
+    _"nsNake is what gave me the idea to do this.  If I didn't
+    see it in the apt repositories, I probably wouldn't have
+    started this."_
 
 ## License
 nsweeper is free software: you can redistribute it and/or modify

@@ -2,7 +2,7 @@ import curses
 
 buttons = []
 
-def popup(x, y, w, h, title, text, screen):
+def popup(x, y, title, text, screen):
 
     topstr = str(title) + "-" * ((len(text) - len(title)) + 2)
 

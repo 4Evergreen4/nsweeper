@@ -19,10 +19,11 @@ def game(screen, main_w, main_h, field_w, field_h, mine_num):
     quit = interface.window.newbutton(40, 10, 'quit', 1)
     button_handler = interface.window.newbuttonhandler(0, play, quit)
 
-    while True:
+    done = False
+    while not(done):
         key = screen.getch()
         if key == ord('q'):
-            break
+            done = True
 
         edge.border()
         edge_panel.bottom()
@@ -30,7 +31,7 @@ def game(screen, main_w, main_h, field_w, field_h, mine_num):
         play.display(display, 20, 5)
         quit.display(display, 20, 8)
         if quit.getstate() == True and key == 32:
-            break
+            done = True
 
         button_handler.update(key)
 

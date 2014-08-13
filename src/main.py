@@ -40,9 +40,12 @@ def main():
     stdscr.keypad(1)
     stdscr.nodelay(1)
 
-    game.game(stdscr, main_w, main_h, field_w, field_h, mine_num)
-
-    stop(stdscr)
+    try:
+        game.game(stdscr, main_w, main_h, field_w, field_h, mine_num)
+        stop(stdscr)
+    except:
+        stop(stdscr)
+        return 1;
 
 def stop(stdscr):
     # Reset everything

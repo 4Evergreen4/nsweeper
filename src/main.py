@@ -43,8 +43,9 @@ def main():
     try:
         game.game(stdscr, main_w, main_h, field_w, field_h, mine_num)
         stop(stdscr)
-    except:
+    except Exception, e:
         stop(stdscr)
+        print "ERRROR:\n%s" % str(e)
         return 1;
 
 def stop(stdscr):

@@ -45,7 +45,7 @@ def main():
         stop(stdscr)
     except Exception, e:
         stop(stdscr)
-        print "ERRROR:\n%s" % str(e)
+        raise
         return 1;
 
 def stop(stdscr):

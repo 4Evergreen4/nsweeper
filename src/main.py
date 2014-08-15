@@ -1,5 +1,6 @@
 import curses
-import game
+import statehandler
+from mainmenu import mainmenu
 
 def main():
     '''Start game'''
@@ -38,12 +39,18 @@ def main():
     curses.cbreak()
     curses.curs_set(0)
     stdscr.keypad(1)
-    stdscr.nodelay(1)
+    #stdscr.nodelay(1)
 
     try:
-        game.game(stdscr, main_w, main_h, field_w, field_h, mine_num)
+        edge = curses.newwin(main_h+2, main_w+2, 0, 0)
+        edge_panel = curses.panel.new_panel(edge)
+        edge.border()
+        edge.refresh()
+        display = curses.newwin(main_h, main_w, 1, 1)
+        display_panel = curses.panel.new_panel(display)
+        mainmenu(stdscr, display, display_panel, edge, edge_panel)
         stop(stdscr)
-    except Exception, e:
+    except Exception:
         stop(stdscr)
         raise
         return 1;

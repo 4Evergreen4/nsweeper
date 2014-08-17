@@ -11,6 +11,7 @@ def mainmenu(stdscr, screen, screen_panel, edge, edge_panel):
 
     done = False
     while not(done):
+        stdscr.refresh()
         edge.border()
         edge_panel.bottom()
         edge.refresh()

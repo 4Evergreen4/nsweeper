@@ -1,5 +1,4 @@
 import curses
-import statehandler
 from mainmenu import mainmenu
 
 def main():
@@ -44,8 +43,6 @@ def main():
     try:
         edge = curses.newwin(main_h+2, main_w+2, 0, 0)
         edge_panel = curses.panel.new_panel(edge)
-        edge.border()
-        edge.refresh()
         display = curses.newwin(main_h, main_w, 1, 1)
         display_panel = curses.panel.new_panel(display)
         mainmenu(stdscr, display, display_panel, edge, edge_panel)

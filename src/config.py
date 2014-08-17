@@ -1,6 +1,5 @@
-config_file = open('../nsweeper.conf', 'r')
-configstr = config_file.read()
+import ConfigParser
 
-configlist = configstr.split('\n')
+config = ConfigParser.RawConfigParser()
 
-config_file.close()
+config.read('../nsweeper.cfg')

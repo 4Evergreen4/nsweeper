@@ -1,5 +1,5 @@
 import curses
-from mainmenu import mainmenu
+import statehandler
 
 def main():
     '''Start game'''
@@ -45,7 +45,10 @@ def main():
         edge_panel = curses.panel.new_panel(edge)
         display = curses.newwin(main_h, main_w, 1, 1)
         display_panel = curses.panel.new_panel(display)
-        mainmenu(stdscr, display, display_panel, edge, edge_panel)
+        statehandler.statehandler(
+            stdscr, display, display_panel, edge,
+            edge_panel, field_h, field_w, mine_num
+        )
         stop(stdscr)
     except Exception:
         stop(stdscr)

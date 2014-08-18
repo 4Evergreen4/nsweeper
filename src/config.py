@@ -9,9 +9,9 @@ config.read(conf_file)
 def reset():
     pass
 
-def getval(var):
-    pass
-    #return config.getboolean('Settings', var)
+def getval(var, section):
+    config.read(conf_file)
+    return config.get(section, var)
 
 def conf_write():
     with open(conf_file, 'wb') as configfile:

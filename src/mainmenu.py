@@ -33,3 +33,6 @@ def mainmenu(stdscr, screen, screen_panel, edge, edge_panel):
             return 'quit'
         if play.getstate() == True and key == key_select:
             return 'game'
+
+        edge.clear()
+        screen.clear()

@@ -22,6 +22,8 @@ def main():
     #
 
     # Starts ncurses
+    main_h -= 2
+    main_w -= 2
     stdscr = curses.initscr()
 
     term_size = stdscr.getmaxyx()

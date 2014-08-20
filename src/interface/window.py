@@ -26,9 +26,9 @@ class newbuttonhandler(object):
     def update(self, key):
         if key == curses.KEY_UP and self.cur_button > 0:
             self.cur_button -= 1
-        if key == curses.KEY_DOWN and self.cur_button < len(self.btns) - 1:
+        elif key == curses.KEY_DOWN and self.cur_button < len(self.btns) - 1:
             self.cur_button += 1
-
+        
         self.btns[self.cur_button - 1].setstate(False)
         self.btns[self.cur_button].setstate(True)
 

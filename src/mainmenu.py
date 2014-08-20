@@ -5,34 +5,35 @@ import game
 import config
 
 def mainmenu(stdscr, screen, screen_panel, edge, edge_panel):
-    play = interface.window.newbutton(40, 16, 'play', 0)
-    quit = interface.window.newbutton(40, 10, 'quit', 1)
-    button_handler = interface.window.newbuttonhandler(0, play, quit)
+    play_button = interface.window.newbutton(40, 16, 'play', 0)
+    quit_button = interface.window.newbutton(40, 10, 'quit', 1)
+    button_handler = interface.window.newbuttonhandler(0, play_button, quit_button)
     try:
-        key_select = ord(config.getval('Keybindings', 'select'))
+        key_select = ord(config.getval('select', 'Keybindings'))
     except:
-        key_select = 32
+        key_select = ord(' ')
+        
     key = 0
+    play_button.setstate(True)
+    quit_button.setstate(False)
+    button_handler.update(key)
 
     done = False
     while not(done):
+        if key == ord('q'):
+            return 'quit'
+
+        if quit_button.getstate() == True and key == key_select:
+            return 'quit'
+        if play_button.getstate() == True and key == key_select:
+            return 'game'
         stdscr.refresh()
         edge.border()
         edge_panel.bottom()
         edge.refresh()
-        screen_panel.top()
         button_handler.update(key)
-        play.display(screen, 20, 5)
-        quit.display(screen, 20, 8)
+        play_button.display(screen, 20, 5)
+        quit_button.display(screen, 20, 8)
+        screen_panel.top()
         screen.refresh()
         key = stdscr.getch()
-        if key == ord('q'):
-            done = True
-
-        if quit.getstate() == True and key == key_select:
-            return 'quit'
-        if play.getstate() == True and key == key_select:
-            return 'game'
-
-        edge.clear()
-        screen.clear()

@@ -40,7 +40,6 @@ def main():
     curses.cbreak()
     curses.curs_set(0)
     stdscr.keypad(1)
-    #stdscr.nodelay(1)
 
     try:
         edge = curses.newwin(main_h+2, main_w+2, 0, 0)

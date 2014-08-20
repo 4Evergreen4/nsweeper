@@ -10,7 +10,7 @@ class newboard(object):
         for height in range(0, self.h):
             self.array.append([])
             for width in range(0, self.w):
-                self.array[height].append(0)
+                self.array[height].append('0')
 
     def getitem(self, x, y):
         '''Returns value from the 2d array'''
@@ -24,7 +24,7 @@ class newboard(object):
         return self.array
 
     def display(self, x, y, screen=0):
-        '''Displays the 2d array.'''
+        '''Displays the unformatted 2d array.'''
         if screen != 0:
             for h in range(0, len(self.array)):
                 screen.addstr(y + h, x, str(self.array[h]))

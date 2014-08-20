@@ -22,8 +22,6 @@ def main():
     #
 
     # Starts ncurses
-    main_h -= 2
-    main_w -= 2
     stdscr = curses.initscr()
 
     term_size = stdscr.getmaxyx()
@@ -42,13 +40,10 @@ def main():
     stdscr.keypad(1)
 
     try:
-        edge = curses.newwin(main_h+2, main_w+2, 0, 0)
-        edge_panel = curses.panel.new_panel(edge)
-        display = curses.newwin(main_h, main_w, 1, 1)
+        display = curses.newwin(main_h, main_w, 0, 0)
         display_panel = curses.panel.new_panel(display)
         statehandler.statehandler(
-            stdscr, display, display_panel, edge,
-            edge_panel, field_h, field_w, mine_num
+            stdscr, display, display_panel, field_h, field_w, mine_num
         )
         stop(stdscr)
     except Exception:

@@ -20,6 +20,13 @@ Nothing here yet.
     see it in the apt repositories, I probably wouldn't have
     started this."_
 
+
+* *Text ASCII Art Generator*: Another awesome ASCII text generator
+  * homepage:  http://patorjk.com/software/taag/
+  * comments:  
+    _"I used the Modular font to display
+    logo on the main menu."_
+
 ## License
 nsweeper is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser Public License as published by

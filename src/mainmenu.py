@@ -4,6 +4,16 @@ import curses.panel
 import game
 import config
 
+logo = [
+" __    _  _______  _     _  _______  _______  _______  _______  ______",
+"|  |  | ||       || | _ | ||       ||       ||       ||       ||    _ |",
+"|   |_| ||  _____|| || || ||    ___||    ___||    _  ||    ___||   | ||",
+"|       || |_____ |       ||   |___ |   |___ |   |_| ||   |___ |   |_||_",
+"|  _    ||_____  ||       ||    ___||    ___||    ___||    ___||    __  |",
+"| | |   | _____| ||   _   ||   |___ |   |___ |   |    |   |___ |   |  | |",
+"|_|  |__||_______||__| |__||_______||_______||___|    |_______||___|  |_|"
+]
+
 def mainmenu(stdscr, screen, screen_panel):
     play_button = interface.window.newbutton(40, 16, 'play', 0)
     quit_button = interface.window.newbutton(40, 10, 'quit', 1)
@@ -30,9 +40,14 @@ def mainmenu(stdscr, screen, screen_panel):
 
         stdscr.refresh()
         button_handler.update(key)
-        play_button.display(screen, 20, 5)
-        quit_button.display(screen, 20, 8)
+        play_button.display(screen, 35, 9)
+        quit_button.display(screen, 35, 12)
+        drawlogo(screen, 1, 3)
         screen_panel.top()
         screen.border()
         screen.refresh()
         key = stdscr.getch()
+
+def drawlogo(screen, y, x):
+    for i in range(0, len(logo)):
+        screen.addstr(y + i, x, str(logo[i]))

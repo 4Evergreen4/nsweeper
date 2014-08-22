@@ -3,6 +3,7 @@ import curses
 buttons = []
 
 def popup(x, y, title, text, screen):
+    '''Deprecated'''
 
     topstr = str(title) + "-" * ((len(text) - len(title)) + 2)
 
@@ -65,3 +66,26 @@ class newbutton(object):
             mid = "|" + self.text + "|"
             screen.addstr(y + 1, x, mid)
             screen.addstr(y + 2, x, top)
+
+class newdialog(object):
+    def __init__(self, h, w, y, x, title, text):
+        self.h = h
+        self.w = w
+        self.y = y
+        self.x = x
+        self.title = title
+        self.text = text
+        self.win = curses.newwin(h + 2, w + 2, y, x)
+        self.winpanel = curses.panel.new_panel(self.win)
+    
+    def display(self):
+        self.winpanel.show()
+        self.win.border()
+        self.win.addstr(0, 1, self.title)
+        self.win.addstr(1, 2, self.text)
+        self.winpanel.top()
+        self.win.refresh()
+    
+    def hide(self):
+        self.winpanel.hide()
+        

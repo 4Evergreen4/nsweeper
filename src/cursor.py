@@ -1,5 +1,8 @@
 import curses
+# Don't use this
+
 class newcursor(object):
+    '''Deprecated, don't use this.'''
     def __init__(self, startx, starty, main_h, main_w):
         self.cursor_x = startx
         self.cursor_y = starty

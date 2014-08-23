@@ -1,6 +1,6 @@
 import curses
 import curses.panel
-import interface.window
+import interface
 import board
 
 def game(stdscr, screen, screen_panel, field_h, field_w, mine_num):

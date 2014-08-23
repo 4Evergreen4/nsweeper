@@ -1,4 +1,4 @@
-import interface.window
+import interface
 import curses
 import curses.panel
 import game
@@ -15,9 +15,9 @@ logo = [
 ]
 
 def mainmenu(stdscr, screen, screen_panel):
-    play_button = interface.window.newbutton(40, 16, 'play', 0)
-    quit_button = interface.window.newbutton(40, 10, 'quit', 1)
-    button_handler = interface.window.newbuttonhandler(0, play_button, quit_button)
+    play_button = interface.newbutton(40, 16, 'play', 0)
+    quit_button = interface.newbutton(40, 10, 'quit', 1)
+    button_handler = interface.newbuttonhandler(0, play_button, quit_button)
     try:
         key_select = ord(config.getval('select', 'Keybindings'))
     except:

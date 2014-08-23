@@ -2,15 +2,16 @@ import curses
 
 class newboard(object):
     '''Creates a 2d array.'''
-    def __init__(self, w, h):
+    def __init__(self, w, h, minenum):
         self.w = w
         self.h = h
+        self.minenum = minenum
         self.array = []
 
         for height in range(0, self.h):
             self.array.append([])
             for width in range(0, self.w):
-                self.array[height].append('0')
+                self.array[height].append(' ')
 
     def getitem(self, x, y):
         '''Returns value from the 2d array'''
@@ -32,3 +33,6 @@ class newboard(object):
         else:
             for height in self.array:
                 print height
+    
+    def generate(self):
+        pass

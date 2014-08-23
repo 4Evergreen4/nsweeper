@@ -4,7 +4,7 @@ import interface.window
 import board
 
 def game(stdscr, screen, screen_panel, field_h, field_w, mine_num):
-    minefield = board.newboard(field_h, field_w)
+    minefield = board.newboard(field_h, field_w, mine_num)
     minefield_list = minefield.getlist()
     display = draw(minefield, 1, 2)
     screen.clear()

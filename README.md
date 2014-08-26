@@ -11,6 +11,7 @@ Nothing here yet.
 | Keys         | Actions                  |
 |--------------|---------------------------
 | Arrow keys   | Moves selector around.   |
+| 'Q' key      | Quits the current state. |
 
 ## Credits
 * nSnake: Classic snake game on the terminal; made with C++ and ncurses.
